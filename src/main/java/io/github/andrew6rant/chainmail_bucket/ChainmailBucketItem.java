@@ -2,10 +2,9 @@ package io.github.andrew6rant.chainmail_bucket;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidDrainable;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.FluidModificationItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -18,9 +17,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
-public class ChainmailBucketItem extends Item implements FluidModificationItem {
-    public ChainmailBucketItem(Settings settings) {
-        super(settings);
+public class ChainmailBucketItem extends ArmorItem implements FluidModificationItem {
+
+
+    public ChainmailBucketItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
+        super(material, slot, settings);
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
