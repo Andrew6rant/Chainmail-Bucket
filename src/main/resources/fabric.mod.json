@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "chainmail_bucket",
+  "version": "${version}",
+  "name": "Chainmail_bucket",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/chainmail_bucket/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.andrew6rant.chainmail_bucket.client.ChainmailBucketClient"
+    ],
+    "main": [
+      "io.github.andrew6rant.chainmail_bucket.ChainmailBucket"
+    ]
+  },
+  "mixins": [
+    "chainmail_bucket.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}
