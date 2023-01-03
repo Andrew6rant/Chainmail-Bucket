@@ -3,8 +3,10 @@
   "id": "chainmail_bucket",
   "version": "${version}",
   "name": "Chainmail Bucket",
-  "description": "",
-  "authors": [],
+  "description": "Adds a chainmail bucket to the game.",
+  "authors": [
+    "Andrew6rant (Andrew Grant)"
+  ],
   "contact": {},
   "license": "MIT",
   "icon": "assets/chainmail_bucket/icon.png",
