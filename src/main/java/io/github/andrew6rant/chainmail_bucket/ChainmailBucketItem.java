@@ -4,8 +4,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidDrainable;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.stat.Stats;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -43,6 +45,23 @@ public class ChainmailBucketItem extends ArmorItem implements FluidModificationI
                         fluidDrainable.getBucketFillSound().ifPresent((sound) -> playerEntity.playSound(sound, 1.0F, 1.0F));
                         world.emitGameEvent(playerEntity, GameEvent.FLUID_PICKUP, blockPos);
                         itemStack.damage(1, playerEntity, (player) -> player.sendToolBreakStatus(hand));
+
+                        BlockPos playerPos = playerEntity.getBlockPos();
+                        Direction playerDirection = playerEntity.getHorizontalFacing().getOpposite();
+                        if (world.isAir(playerPos)) { // check if flowing water can be placed without destroying anything
+                            world.setBlockState(playerPos, Fluids.WATER.getFlowing().getDefaultState().getBlockState());
+                            if (world.isAir(playerPos.offset(playerDirection))) { // attempt to place water behind the player, since flowing water only updates if there are two of them
+                                world.setBlockState(playerPos.offset(playerDirection), Fluids.WATER.getFlowing().getDefaultState().getBlockState());
+                            }
+                        } else if (world.isAir(playerPos.offset(Direction.UP))) { // If the player is standing in a block, attempt to place the water above them
+                            world.setBlockState(playerPos.offset(Direction.UP), Fluids.WATER.getFlowing().getDefaultState().getBlockState());
+                            if (world.isAir(playerPos.offset(playerDirection).offset(Direction.UP))) {
+                                world.setBlockState(playerPos.offset(playerDirection).offset(Direction.UP), Fluids.WATER.getFlowing().getDefaultState().getBlockState());
+                            }
+                        }
+                        //world.emitGameEvent(playerEntity, GameEvent.FLUID_PLACE, blockPos);
+
+
                         return TypedActionResult.success(itemStack, world.isClient());
                     }
                 }
