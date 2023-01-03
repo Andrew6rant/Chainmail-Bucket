@@ -3,7 +3,7 @@
   "id": "chainmail_bucket",
   "version": "${version}",
   "name": "Chainmail Bucket",
-  "description": "Adds a chainmail bucket to the game.",
+  "description": "Adds a bucket that is only able to remove water source blocks, and not store it",
   "authors": [
     "Andrew6rant (Andrew Grant)"
   ],
