@@ -2,5 +2,19 @@
 	"parent": "item/generated",
 	"textures": {
 		"layer0": "chainmail_bucket:item/chainmail_bucket"
-	}
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"is_helmet": 0
+			},
+			"model": "chainmail_bucket:item/chainmail_bucket_bucket"
+		},
+		{
+			"predicate": {
+				"is_helmet": 0.5
+			},
+			"model": "chainmail_bucket:item/chainmail_bucket_helmet"
+		}
+	]
 }
