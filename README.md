@@ -2,7 +2,7 @@
 
 ![Chainmail Bucket logo](https://user-images.githubusercontent.com/57331134/210295275-d22bbd47-3b9b-4d2f-b7e6-3f5c00f118be.png)
 
-For Minecraft 1.19.3.
+For Minecraft 1.19-1.20.
 
 Adds a bucket that is only able to remove fluid source blocks, and not store it.
 
@@ -10,6 +10,6 @@ Adds a bucket that is only able to remove fluid source blocks, and not store it.
 
 You can also place the bucket on your head (for an armor value equal to Iron and Chainmail helmets)
 
-![Bucket on head](https://user-images.githubusercontent.com/57331134/210295361-54ffa512-1c8f-4624-b5ac-56a09c119157.png)
+![Bucket on head](https://github.com/Andrew6rant/Chainmail-Bucket/assets/57331134/4ac0c29c-694c-463d-85d3-de39f2dbd1e6)
 
 Just be careful when trying to remove lava, as the bucket will spill a little bit of whatever it tries to pick up.

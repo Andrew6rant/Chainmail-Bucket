@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 public class ChainmailBucket implements ModInitializer {
     public static final ArmorMaterial CUSTOM_CHAINMAIL_ARMOR_MATERIAL = new ChainmailBucketArmorMaterial();
 
-    public static final ChainmailBucketItem CHAINMAIL_BUCKET = new ChainmailBucketItem(CUSTOM_CHAINMAIL_ARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings());
+    public static final ChainmailBucketItem CHAINMAIL_BUCKET = new ChainmailBucketItem(CUSTOM_CHAINMAIL_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings());
 
 
     @Override

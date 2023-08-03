@@ -5,10 +5,8 @@ import net.minecraft.block.FluidBlock;
 import net.minecraft.block.FluidDrainable;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.stat.Stats;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -23,8 +21,8 @@ import org.jetbrains.annotations.Nullable;
 public class ChainmailBucketItem extends ArmorItem implements FluidModificationItem {
 
 
-    public ChainmailBucketItem(ArmorMaterial material, EquipmentSlot slot, Settings settings) {
-        super(material, slot, settings);
+    public ChainmailBucketItem(ArmorMaterial material, ArmorItem.Type type, Settings settings) {
+        super(material, type, settings);
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
